@@ -68,7 +68,7 @@
 //省
 - (void)getDataWithProvince
 {
-    [AFNetworkHandler GETWithAFNByURL:@"http://api.superwallet.com.cn/loanapp/check_region?id=1" completion:^(id result) {
+    [AFNetworkHandler GETWithAFNByURL:@"http://xxxxx?id=1" completion:^(id result) {
         
         self.arrProvince = [NSMutableArray array];
         NSArray *arr = [result objectForKey:@"list"];
@@ -83,7 +83,7 @@
 //市
 - (void)getDataWithCity
 {
-    NSString *strUrl = [NSString stringWithFormat:@"%@%@", @"http://api.superwallet.com.cn/loanapp/check_region?id=", self.region_id];
+    NSString *strUrl = [NSString stringWithFormat:@"%@%@", @"http://xxxxx?id=", self.region_id];
     
     [AFNetworkHandler GETWithAFNByURL:strUrl completion:^(id result) {
         
@@ -100,7 +100,7 @@
 - (void)getDataWithDistrict
 {
     
-    NSString *strUrl = [NSString stringWithFormat:@"%@%@", @"http://api.superwallet.com.cn/loanapp/check_region?id=", [self.arrCity[_row] region_id]];
+    NSString *strUrl = [NSString stringWithFormat:@"%@%@", @"http://xxxxx?id=", [self.arrCity[_row] region_id]];
     
     [AFNetworkHandler GETWithAFNByURL:strUrl completion:^(id result) {
         
